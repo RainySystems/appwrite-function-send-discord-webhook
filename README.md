@@ -8,7 +8,7 @@ webhookUrl (only required if you plan to use automatically sending messages [by 
 
 ## JSON for function parameters
 
-```
+```ts
 {
     "webhookUrl": DISCORD_WEBHOOK_URL,
     "$id": OBJECT_ID (Might be userId or request id or what you like),
