@@ -1,3 +1,4 @@
+[![CodeQL](https://github.com/RainySystems/appwrite-function-send-discord-webhook/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/RainySystems/appwrite-function-send-discord-webhook/actions/workflows/codeql-analysis.yml)
 # 📧 Sending custom Discord webhook message through Appwrite function
 
 A sample Node.js Cloud Function for sending custom or automatically triggered Message to a given Discord webhook.
