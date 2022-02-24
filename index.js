@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
  * Set environment variables
  */
 var payload = '';
-var webhookUrl = 'https://canary.discord.com/api/webhooks/900400270046015539/cyUsAifx6m4LzMRnrq15L1BHY4S4-IicFdozaOHISWnJU7EHuYoxrKnq3zTJxTy2Z480';
+var webhookUrl = '';
 var id = '';
 var event = '';
 var message = '';
