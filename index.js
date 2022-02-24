@@ -1,10 +1,12 @@
-const Discord = require('discord.js');
+//const Discord = require('discord.js');
+const fetch = require('node-fetch');
+
 
 /**
  * Set environment variables
  */
 var payload = '';
-var webhookUrl = '';
+var webhookUrl = 'https://canary.discord.com/api/webhooks/900400270046015539/cyUsAifx6m4LzMRnrq15L1BHY4S4-IicFdozaOHISWnJU7EHuYoxrKnq3zTJxTy2Z480';
 var id = '';
 var event = '';
 var message = '';
@@ -33,27 +35,43 @@ if (manual) {
 }
 
 /**
- * Register the webhookClient from Discord.js (https://discord.js.org/#/docs/main/stable/class/WebhookClient)
+ * function that converts a color HEX to a valid Discord color
+ * @param {*} hex 
+ * @returns (int) a valid Discord color
  */
-const webhookClient = new Discord.WebhookClient({ url: webhookUrl });
+function hexToDecimal(hex) {
+    return parseInt(hex.replace("#", ""), 16)
+}
 
-/**
- * Configure the embed that will be sent via Discord webhook (https://discord.js.org/#/docs/main/master/class/MessageEmbed)
- */
-const embed = new Discord.MessageEmbed()
-    .setTitle(event)
-    .setColor('#f02a65')
-    .setDescription(message)
-    .setTimestamp()
-    .setFooter({
-        text: id,
+function sendMessage() {
+    /**
+     * Create embed object
+     */
+    var embed = {
+        title: event,
+        description: message,
+        color: hexToDecimal("#f02a65"),
+        footer: {
+            text: id,
+            icon_url: "https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/favicon.png"
+        }
+    };
+
+    /**
+     * Fetch the webhook URL and send the message including the embed
+     */
+    fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(
+            {
+                "username": "Appwrite",
+                "avatar_url": "https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/favicon.png",
+                embeds: [embed]
+            })
     });
+}
 
-/**
- * Send the Embed to the Discord Webhook
- */
-webhookClient.send({
-    username: 'Appwrite',
-    avatarURL: 'https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/favicon.png',
-    embeds: [embed],
-});
+sendMessage();

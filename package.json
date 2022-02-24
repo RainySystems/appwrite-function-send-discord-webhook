@@ -12,8 +12,7 @@
     "author": "RainyDev@RainySystems",
     "license": "ISC",
     "dependencies": {
-        "discord": "^0.8.2",
-        "discord.js": "^13.6.0",
-        "node-appwrite": "^4.0.2"
+        "node-appwrite": "^4.0.2",
+        "node-fetch": "^2.6.7"
     }
 }
