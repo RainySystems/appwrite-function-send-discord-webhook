@@ -1,16 +1,16 @@
 {
     "name": "appwrite-function-send-discord-webhook",
-    "version": "1.0.0",
+    "version": "3.0.0",
     "description": "A sample NodeJS Cloud Function to send webhooks to discord.",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "run": "node index.js"
     },
     "keywords": [
         "appwrite"
     ],
     "author": "RainyDev@RainySystems",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "node-appwrite": "^4.0.2",
         "node-fetch": "^2.6.7"
