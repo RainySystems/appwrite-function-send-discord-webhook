@@ -1,6 +1,6 @@
 {
     "name": "appwrite-function-send-discord-webhook",
-    "version": "3.1.0",
+    "version": "4.0.0",
     "description": "A sample NodeJS Cloud Function to send webhooks to discord.",
     "main": "index.js",
     "scripts": {
